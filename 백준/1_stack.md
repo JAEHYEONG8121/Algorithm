@@ -1,4 +1,4 @@
-## 1. stack - 단어순서 뒤집기
+## 2. stack - 단어순서 뒤집기
 
 문제 : https://www.acmicpc.net/problem/12605
 
