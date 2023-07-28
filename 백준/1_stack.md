@@ -1,3 +1,36 @@
+# Algorithm
+
+## 1. stack - 막대기
+
+문제 : https://www.acmicpc.net/problem/17608
+
+**내풀이**
+```python
+import sys
+
+n = int(sys.stdin.readline())
+l = []
+cnt = 1
+
+for _ in range(n) :
+    l.append(int(sys.stdin.readline()))
+last = l[-1]
+
+for i in reversed(range(len(l))) :
+    if l[i] > last :
+        cnt +=1
+        last = l[i]
+print(cnt)
+```
+
+- 오른쪽에서 봤을 때 보이는 막대기의 수를 구하는 문제
+- 처음에는 입력받은 막대기를 리스트에 저장
+- 리스트를 거꾸로 순회하면서 크기 비교 & 카운트
+  - 1. 원소 입력 받고 리스트에 저장
+    2. 리스트의 가장 오른쪽(마지막)원소를 last변수에 저장
+    3. 리스트를 for문을 통해 거꾸로 순회하면서 크기 비교 -> cnt 1증가 & last변수 갱신
+***
+
 ## 2. stack - 단어순서 뒤집기
 
 문제 : https://www.acmicpc.net/problem/12605
@@ -29,7 +62,7 @@ for i in range(int(input())):
 - 하나의 for문과 format형식의 문법으로 한 번에 print한 것이다.
 - list(reversed(input().split())) -> 이를 통해서 내가 단어가 저장되어 있는 리스트를 거꾸로 순회하는 것을 한 번에 실현했다.
 - 마지막으로 리스트를 문자열로 일정한 규칙으로 합쳐주는 join메서드를 사용하여 띄어쓰기를 간격으로 문장에 있는 단어들을 거꾸로 출력하였다.
-***
+
 **Review**
 - 결국 스택 자료구조의 핵심은 LIFO(Last In First Out)이라고 생각이 들었다. 이를 통해서 리스트를 거꾸로 순회한다든가, pop()메서드를 통해 리스트에 존재하는 가장 오른쪽(마지막)원소에 대한 접근을 가능케 하는 것이 핵심이라고 생각한다.
     
