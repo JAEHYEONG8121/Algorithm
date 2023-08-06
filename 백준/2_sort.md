@@ -34,3 +34,51 @@ print(cnt)
 - 이 문제는 그리디 알고리즘과 정렬의 개념이 합쳐진 문제였다. 최대값을 구하기 위해 리스트안에 있는 회의시간을 어떤기준으로 어떻게 정렬할 것인지가 핵심이라고 생각한다.
 - 추가적으로, sort() 함수의 key값을 람다함수를 통해 정렬할 수 있다는 것을 다시 한 번 상기하게 되었다.
 
+***
+
+## 2. sort - 신입사원
+
+문제 : https://www.acmicpc.net/problem/1946
+
+**내 풀이**
+```python
+import sys
+
+input = sys.stdin.readline
+
+for _ in range(int(input())) :
+    l = []
+    cnt, top = 1, 0
+    for _ in range(int(input())) :
+        a = tuple(map(int, input().split()))
+        l.append(a)
+    l.sort(key=lambda x: (x[0], x[1]))
+    for i in range(1, len(l)) :
+        if l[i][1] < l[top][1] :
+            top = i
+            cnt += 1 
+    print(cnt)
+```
+- 회사에서 신입사원을 고용하는데, 고용 기준은 서류심사 성적과 면접심사 성적 둘 중에 적어도 하나가 다른 지원자보다 낮지 않은 경우만 선발하는 것이다.
+- 즉, 서류와 면접성적 둘 다 어떠한 경쟁자보다 우위에 있지 않다면 그사람은 불합격인 것이다.
+- 우선적으로 '(서류 성적, 면접 성적)'와 같은 형태의 튜플로 입력받아 l이라는 리스트에 저장했고, 이를 튜플의 서류 성적을 기준으로 정렬했다.
+- 1 4 o
+  2 5 x
+  3 6 x
+  4 2 o
+  5 7 x
+  6 1 o
+  7 3 x
+
+
+
+
+
+
+
+
+
+
+
+
+
