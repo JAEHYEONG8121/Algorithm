@@ -83,7 +83,7 @@ for _ in range(int(input())) :
 
 ## 3. sort - 두 용액
 
-문제 : https://www.acmicpc.net/problem/2740
+문제 : https://www.acmicpc.net/problem/2470
 
 **내 풀이**
 ```python
