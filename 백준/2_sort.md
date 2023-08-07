@@ -79,6 +79,46 @@ for _ in range(int(input())) :
 **Review**
 - 솔직히 그리 어려운 문제는 아니다.. 서류 성적을 기준으로 정렬한 후에 면접 성적을 비교하는 것이 포인트인데, 비교할 때 계속 최고 성적을 갱신해줘야한다는 생각을 일찍하지 못해서 5번이나 틀렸다,,
 
+***
+
+## 3. sort - 두 용액
+
+문제 : 
+
+**내 풀이**
+```python
+n = int(input())
+arr = list(map(int, input().split()))
+arr.sort()
+
+left = 0
+right = n-1
+
+answer = abs(arr[left] + arr[right])
+result = [arr[left], arr[right]]
+
+
+while left < right:
+    left_val = arr[left]
+    right_val = arr[right]
+
+    sum = left_val + right_val
+  
+    if abs(sum) < answer:
+        answer = abs(sum)
+        result = [left_val, right_val]
+        if answer == 0:
+          break
+    if sum < 0:
+        left += 1
+    else:
+        right -= 1
+
+print(result[0], result[1])
+
+```
+
+- 
 
 
 
