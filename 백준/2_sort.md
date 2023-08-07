@@ -83,24 +83,24 @@ for _ in range(int(input())) :
 
 ## 3. sort - 두 용액
 
-문제 : 
+문제 : https://www.acmicpc.net/problem/2740
 
 **내 풀이**
 ```python
 n = int(input())
-arr = list(map(int, input().split()))
-arr.sort()
+l = list(map(int, input().split()))
+l.sort()
 
 left = 0
 right = n-1
 
-answer = abs(arr[left] + arr[right])
-result = [arr[left], arr[right]]
+answer = abs(l[left] + l[right])
+result = [l[left], l[right]]
 
 
 while left < right:
-    left_val = arr[left]
-    right_val = arr[right]
+    left_val = l[left]
+    right_val = l[right]
 
     sum = left_val + right_val
   
@@ -118,7 +118,14 @@ print(result[0], result[1])
 
 ```
 
-- 
+- 두 수를 합쳐서 0에 가장 가까운 경우를 출력해야 한다.
+- 음수, 양수가 섞여있으므로 두 수의 합의 절댓값이 0에 가까운 수가 나올 수 있도록 우선적으로 리스트를 정렬했다.
+- 정렬이 되었다면, 가장 왼쪽과 가장 오른쪽에서 각각 인덱스를 left, right로 지정해주고 그 때 두 수의 합을 answer에 저장해둔다.
+- 이제 두 인덱스가 만나지 않을 때까지 반복하여 answer값이 현재 answer값보다 작다면 계속 갱신하고 그 때의 절댓값이 아닌 실제 계산값의 부호를 통해서 만약 음수라면 left를 한 칸 오른쪽으로, 양수라면 right를 한 칸 왼쪽으로 당겨가면서 최대한 0에 가까운 수가 나올 수 있도록 하였다.
+
+**Review**
+- 처음에는 양수 부분 음수 부분을 나누어서 하려고 했으나 불필요한 짓이었다.
+- 정렬를 한 상태에서 왼쪽 끝과 오른쪽 끝에서부터 각각 시작하여 두 수의 합의 절댓값이 계속 0에 가까워질 수 있게 만들어주면 되는 것이었다.
 
 
 
