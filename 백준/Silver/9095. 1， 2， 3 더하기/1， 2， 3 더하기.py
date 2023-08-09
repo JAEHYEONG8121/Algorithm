@@ -11,4 +11,3 @@ for i in range(4, 12) :
 for _ in range(int(input())) :
     n = int(input())
     print(l[n])
-    
