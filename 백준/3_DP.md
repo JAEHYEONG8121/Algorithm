@@ -92,7 +92,7 @@ print(min(RGB[n - 1]))
 문제 : https://www.acmicpc.net/problem/12865
 
 **내 풀이**
-```
+```python
 import sys
 input = sys.stdin.readline
 
